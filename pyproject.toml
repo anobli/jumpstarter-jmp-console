@@ -1,0 +1,32 @@
+[project]
+name = "jumpstarter-jmp-console"
+version = "0.1.0"
+description = "Multi-UART driver with aggregated console view for Jumpstarter"
+authors = [
+  { name = "Jumpstarter Team" },
+]
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+dependencies = [
+  "jumpstarter",
+  "jumpstarter-driver-pyserial",
+  "click>=8.1.7",
+  "anyio>=4.0.0",
+]
+
+[project.entry-points."jumpstarter.drivers"]
+JmpConsole = "jumpstarter_jmp_console.driver:JmpConsole"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.2",
+  "pytest-cov>=5.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jumpstarter_jmp_console"]
