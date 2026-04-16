@@ -232,8 +232,7 @@ class Console:
             command = self.key_bindings_commands[key]
             domain = command[0]
             args = command[1:]
-            cli = self.cli.children[domain].cli()
-            await to_thread.run_sync(lambda: cli.main(args, standalone_mode=False))
+            await to_thread.run_sync(lambda: self.cli.children[domain].cli().main(args, standalone_mode=False))
             return True
         return False
 
