@@ -13,7 +13,17 @@ JmpConsole gives you an aggregated view of all UARTs with prefixes like `[core0]
 
 ## Installation
 
+Install directly from GitHub:
+
 ```bash
+pip install git+https://github.com/anobli/jumpstarter-jmp-console.git
+```
+
+Or clone and install in editable mode for development:
+
+```bash
+git clone https://github.com/anobli/jumpstarter-jmp-console.git
+cd jumpstarter-jmp-console
 pip install -e .
 ```
 
